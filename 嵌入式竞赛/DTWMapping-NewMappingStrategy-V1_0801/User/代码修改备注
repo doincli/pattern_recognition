@@ -1,0 +1,28 @@
+代码修改之处：
+
+1.  volatile全部取消改为static
+volatile u16 i=0;           // 计数用
+volatile u16 s=0;
+volatile u16 s_dif =0;
+volatile u8 j=0;    //本文件中不可用
+
+
+2. volatile全部取消改为static
+volatile u8 k=0;
+volatile u8 kk=0;
+volatile u8 i_dtw =0;
+volatile u8 j_dtw = 0;
+volatile u8 k_dtw = 0;
+
+3.完全舍弃stdthresh阈值这一个参数，dtw判断策略变更为比较模式，在比较中找到一个最好的即判定
+
+4.修改训练模板阈值部分的代码
+包括函数 fasttraining
+函数train
+直接删除trainthresh函数
+5. 修改了drawcurve函数
+6. 修改了DTW搜索路径大小。改为W = 20;
+7. D，DTW数组用malloc函数来分配内存
+8. 修改定时器频率，由2KHz方波改为1KHz方波
+
+
